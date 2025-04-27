@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mashxurlar{% endblock %}
+
+{% block content %}
+    <ul class="poet-list">
+    {% for p in poets %}
+        <li>
+            <a href="{% url 'poet_detail_view' pk=forloop.counter0 %} ">
+                {{ p }}<sub>->link</sub>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<style>
+    .poet-list {
+        padding-left: 700px;
+        list-style-type: none;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .poet-list li {
+        margin: 10px 0;
+    }
+
+    .poet-list a {
+        text-decoration: none;
+        color: #e4eaf1;
+        font-size: 18px;
+        padding: 8px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .poet-list a:hover {
+        background-color: #1420af;
+        color: white;
+        border-radius: 5px;
+    }
+</style>
+
+{% endblock %}

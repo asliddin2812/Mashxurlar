@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {{ poet.name }}
+{% endblock %}
+
+{% block content %}
+    <div style="color: white">
+        <h1>{{ poet.name }}</h1>
+        <img width="200px" src="{% static poet.img %}" alt="{{ poet.name }}" >
+        <p><strong>Kasb:</strong> {{ poet.profession }}</p>
+        <p><strong>Bio:</strong> {{ poet.bio }}</p>
+    </div>
+
+{% endblock %}
